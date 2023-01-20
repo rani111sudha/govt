@@ -17,7 +17,7 @@ pipeline {
                 withCredentials([string(credentialsId: 'docker-hub', variable: 'hubPwd')]) {
     // some block
 }
-                sh "docker login -u rani111sudha -p ${'hubPwd'}"
+                sh "docker login -u rani111sudha -p ${hubPwd}"
               sh "docker push rani111sudha/govt:0.0.2"
             }
           } 
