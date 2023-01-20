@@ -22,10 +22,10 @@ pipeline {
                     }
             }
           } 
-            stage('Docker Push'){
+            stage('Docker Deploy'){
             steps{
           sshagent(['Tomcat-creds']) {
-              ssh"ssh ec2-user@ 172.31.5.99 docker run-d -p 8080:8080 --name govt rani111sudha/govt:0.0.2"
+              ssh"ssh -o StrictHostKeyChecking=no ec2-user@ 172.31.5.99 docker run-d -p 8080:8080 --name govt rani111sudha/govt:0.0.2"
           }
             }
 }                                       
