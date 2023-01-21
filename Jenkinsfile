@@ -9,14 +9,14 @@ pipeline {
             }
           stage('Docker Build'){
             steps{
-              sh "docker build -t rani111sudha/govt:0.0.2 ."
+              sh "docker build -t rani111sudha/govt:0.0.3 ."
             }
           }
            stage('Docker Push'){
             steps{
                 withCredentials([string(credentialsId: 'docker-hub', variable: 'hubPwd')]) {
  sh "docker login -u rani111sudha -p ${hubPwd}"
-              sh "docker push rani111sudha/govt:0.0.2"
+              sh "docker push rani111sudha/govt:0.0.3"
                     }
                   }
                 } 
