@@ -9,7 +9,7 @@ pipeline {
             }
           stage('Docker Build'){
             steps{
-              sh "docker build -t rani111sudha/govt:${commit_id()} ."
+              sh "docker build . -t rani111sudha/govt:${commit_id()} "
             }
           }
            stage('Docker Push'){
