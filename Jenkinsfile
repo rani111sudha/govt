@@ -24,7 +24,7 @@ pipeline {
             steps{
           sshagent(['Tomcat-creds']) {
               sh "ssh -o StrictHostKeyChecking=no ec2-user@172.31.5.99 docker rm -f govt"
-              sh "ssh ec2-user@172.31.5.99 docker run -d -p 8080:8080 --name govt rani111sudha/govt:${commit_id()}"
+              sh "ssh ec2-user@172.31.5.99 docker run -d -p 8082:8080 --name govt rani111sudha/govt:${commit_id()}"
                       }
    
                    }
